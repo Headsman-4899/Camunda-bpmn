@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1p403fu" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_0h8ou14" isExecutable="true">
+    <bpmn:startEvent id="Event_18w9u6l">
+      <bpmn:outgoing>Flow_11fabfi</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_11fabfi" sourceRef="Event_18w9u6l" targetRef="createUserTask" />
+    <bpmn:endEvent id="Event_1b4hx8d">
+      <bpmn:incoming>Flow_174kab5</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:userTask id="createUserTask" name="Create User Task" camunda:formKey="{    &#34;code&#34;:&#34;someDef&#34;,    &#34;version&#34;:0,    &#34;name&#34;:&#34;someDef&#34;,    &#34;properties&#34;:{       &#34;newTaskName&#34;:{          &#34;propertyType&#34;:&#34;STRING&#34;,          &#34;name&#34;:&#34;newTaskName&#34;,          &#34;isRequired&#34;:true,          &#34;isMultiple&#34;:false,          &#34;sortOrder&#34;:0,          &#34;isEnabled&#34;:true       },       &#34;newTaskCode&#34;:{          &#34;propertyType&#34;:&#34;INTEGER&#34;,          &#34;name&#34;:&#34;newTaskCode&#34;,          &#34;isRequired&#34;:true,          &#34;isMultiple&#34;:false,          &#34;sortOrder&#34;:0,          &#34;isEnabled&#34;:true       },       &#34;taskToCopy&#34;:{          &#34;propertyType&#34;:&#34;JSON&#34;,          &#34;name&#34;:&#34;taskToCopy&#34;,          &#34;isRequired&#34;:true,          &#34;defaultValue&#34;:{                       },          &#34;isMultiple&#34;:false,          &#34;sortOrder&#34;:0,          &#34;isEnabled&#34;:true       }    } }" camunda:assignee="somedoby">
+      <bpmn:incoming>Flow_11fabfi</bpmn:incoming>
+      <bpmn:outgoing>Flow_174kab5</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_174kab5" sourceRef="createUserTask" targetRef="Event_1b4hx8d" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_0h8ou14">
+      <bpmndi:BPMNEdge id="Flow_174kab5_di" bpmnElement="Flow_174kab5">
+        <di:waypoint x="380" y="120" />
+        <di:waypoint x="522" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11fabfi_di" bpmnElement="Flow_11fabfi">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="280" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_10fpt4z_di" bpmnElement="createUserTask">
+        <dc:Bounds x="280" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_18w9u6l_di" bpmnElement="Event_18w9u6l">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1b4hx8d_di" bpmnElement="Event_1b4hx8d">
+        <dc:Bounds x="522" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

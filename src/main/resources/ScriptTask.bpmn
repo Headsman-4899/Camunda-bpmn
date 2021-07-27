@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1gt470x" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_00fo9zh" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0cgdrxl</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0cgdrxl" sourceRef="StartEvent_1" targetRef="createScriptTask" />
+    <bpmn:endEvent id="Event_19opioc">
+      <bpmn:incoming>Flow_1b9dldh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1b9dldh" sourceRef="createScriptTask" targetRef="Event_19opioc" />
+    <bpmn:serviceTask id="createScriptTask" name="Create Script Task" camunda:type="external" camunda:topic="SCRIPT_TASK">
+      <bpmn:extensionElements>
+        <camunda:inputOutput>
+          <camunda:inputParameter name="createScriptTask">{
+  "input": {
+    "newTaskCode": "$(newTaskCodeMessage.info.newTaskCode)",
+    "newTaskName": "$(newTaskCodeMessage.info.newTaskName)"
+  },
+  "messageName": "newTaskCodeMessage"
+}</camunda:inputParameter>
+          <camunda:outputParameter name="createScriptTask">${createScriptTask}</camunda:outputParameter>
+        </camunda:inputOutput>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0cgdrxl</bpmn:incoming>
+      <bpmn:outgoing>Flow_1b9dldh</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_00fo9zh">
+      <bpmndi:BPMNEdge id="Flow_1b9dldh_di" bpmnElement="Flow_1b9dldh">
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="482" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cgdrxl_di" bpmnElement="Flow_0cgdrxl">
+        <di:waypoint x="178" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="142" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_19opioc_di" bpmnElement="Event_19opioc">
+        <dc:Bounds x="482" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0fh1j1k_di" bpmnElement="createScriptTask">
+        <dc:Bounds x="240" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

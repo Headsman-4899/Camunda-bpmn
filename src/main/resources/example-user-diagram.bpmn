@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_074rvyz" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.8.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="Process_1fb14tc" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0cos1qe</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1cejwmb">
+      <bpmn:incoming>Flow_11vh1wh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1jvm111" sourceRef="userTaskId" targetRef="Activity_1ouyjel" />
+    <bpmn:sequenceFlow id="Flow_0cos1qe" sourceRef="StartEvent_1" targetRef="userTaskId" />
+    <bpmn:userTask id="userTaskId" name="User task" camunda:formKey="{    &#34;code&#34;:&#34;taskInputVarDef&#34;,    &#34;version&#34;:0,    &#34;name&#34;:&#34;Task input parameters definiton&#34;,    &#34;properties&#34;:{       &#34;newTaskName&#34;:{          &#34;propertyType&#34;:&#34;STRING&#34;,          &#34;name&#34;:&#34;newTaskName&#34;,          &#34;defaultValue&#34;:null,          &#34;sortOrder&#34;:0,          &#34;uiSettings&#34;:null,          &#34;validationNode&#34;:null,          &#34;restrictedValues&#34;:null,          &#34;isMultiple&#34;:false,          &#34;isEnabled&#34;:true,          &#34;isRequired&#34;:true       },       &#34;newTaskCode&#34;:{          &#34;propertyType&#34;:&#34;INTEGER&#34;,          &#34;name&#34;:&#34;newTaskCode&#34;,          &#34;defaultValue&#34;:null,          &#34;sortOrder&#34;:0,          &#34;uiSettings&#34;:null,          &#34;validationNode&#34;:null,          &#34;isMultiple&#34;:false,          &#34;isEnabled&#34;:true,          &#34;isRequired&#34;:true       },       &#34;taskToCopy&#34;:{          &#34;propertyType&#34;:&#34;JSON&#34;,          &#34;name&#34;:&#34;taskToCopy&#34;,          &#34;defaultValue&#34;:null,          &#34;sortOrder&#34;:0,          &#34;uiSettings&#34;:null,          &#34;validationNode&#34;:null,          &#34;isMultiple&#34;:false,          &#34;isEnabled&#34;:true,          &#34;isRequired&#34;:true       }    } }" camunda:assignee="assignee">
+      <bpmn:extensionElements>
+        <camunda:properties>
+          <camunda:property name="taskCode" value="user-task-code" />
+        </camunda:properties>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0cos1qe</bpmn:incoming>
+      <bpmn:outgoing>Flow_1jvm111</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_11vh1wh" sourceRef="Activity_1ouyjel" targetRef="Event_1cejwmb" />
+    <bpmn:receiveTask id="Activity_1ouyjel">
+      <bpmn:incoming>Flow_1jvm111</bpmn:incoming>
+      <bpmn:outgoing>Flow_11vh1wh</bpmn:outgoing>
+    </bpmn:receiveTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1fb14tc">
+      <bpmndi:BPMNEdge id="Flow_11vh1wh_di" bpmnElement="Flow_11vh1wh">
+        <di:waypoint x="510" y="120" />
+        <di:waypoint x="562" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cos1qe_di" bpmnElement="Flow_0cos1qe">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="260" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jvm111_di" bpmnElement="Flow_1jvm111">
+        <di:waypoint x="360" y="120" />
+        <di:waypoint x="410" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1cejwmb_di" bpmnElement="Event_1cejwmb">
+        <dc:Bounds x="562" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18hzl80_di" bpmnElement="userTaskId">
+        <dc:Bounds x="260" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0i5ojeb_di" bpmnElement="Activity_1ouyjel">
+        <dc:Bounds x="410" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
